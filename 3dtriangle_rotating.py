@@ -4,6 +4,8 @@ from pygame.locals import *
 from OpenGL.GL import *
 from OpenGL.GLU import*
 
+
+
 verticies = (
     (-1,-1,1),
     (1,-1,-1),
@@ -64,8 +66,9 @@ def triangle():
 def main():
     pygame.init()
     display = (800, 600)
+    song = pygame.mixer.music.load('spin.mp3')
     pygame.display.set_mode(display, DOUBLEBUF | OPENGL)
-
+    pygame.mixer.music.play(1,0)
     gluPerspective(45, (display[0] / display[1]), 0.1, 50.0)
 
     glTranslatef(0.0, 0.0, -5)
